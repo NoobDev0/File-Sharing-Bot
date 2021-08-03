@@ -9,7 +9,7 @@ from bot import Bot
 from config import ADMINS, START_MSG, OWNER_ID, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON
 from helper_func import subscribed, encode, decode, get_messages
 
-@Bot.on_message(filters.command('start') & filters.private & subscribed)
+@Bot.on_message(filters.command('filestorestartone') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     text = message.text
     if len(text)>7:
@@ -92,7 +92,7 @@ async def start_command(client: Client, message: Message):
         )
         return
 
-@Bot.on_message(filters.command('start') & filters.private)
+@Bot.on_message(filters.command('filestorestarttwo') & filters.private)
 async def not_joined(client: Client, message: Message):
     text = "<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>"
     message_text = message.text
